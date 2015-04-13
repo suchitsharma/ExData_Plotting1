@@ -14,10 +14,11 @@ DT <- DT[good]
 png(file = "plot3.png")
 
 ##Plot graph
-plot(DT$Sub_metering_1, type = "s", ylab = "Energy sub metering", xlab = "")
-points(DT$Sub_metering_2, type = "s", col = "red")
-points(DT$Sub_metering_3, type = "s", col = "blue")
-legend("topright", legend = c("Sub_metering_1", "Sub_metering_2" ,"Sub_metering_2"), lty=c(1,1,1), lwd=c(2.5,2.5,2.5), col=c("black","red", "blue"))
+plot(DT$Sub_metering_1, type = "l", ylab = "Energy sub metering", xaxt="n", xlab = "")
+points(DT$Sub_metering_2, type = "l", col = "red")
+points(DT$Sub_metering_3, type = "l", col = "blue")
+axis(1, at=c(1,1500,2800), labels=c("Thu", "Fri", "Sat"))
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2" ,"Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5,2.5,2.5), col=c("black","red", "blue"))
 
 ##Close file
 dev.off()

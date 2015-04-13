@@ -14,7 +14,8 @@ DT <- DT[good]
 png(file = "plot2.png")
 
 ##Plot graph
-plot(DT$Global_active_power, type = "s", ylab = "Global Active Power (Kilowatts)", xlab = "")
+plot(DT$Global_active_power, type = "l", ylab = "Global Active Power (Kilowatts)", xaxt="n", xlab = "")
+axis(1, at=c(1,1500,2800), labels=c("Thu", "Fri", "Sat"))
 
 ##Close file
 dev.off()
